@@ -1,4 +1,4 @@
 BB-Logger
 =========
 
-A java librarie to log
+A java library to log
