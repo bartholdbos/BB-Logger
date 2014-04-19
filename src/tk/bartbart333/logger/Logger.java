@@ -15,8 +15,12 @@ public class Logger{
 	}
 	
 	public static void log(Level level, Object msg){
-		for(Handler handler : handlers){
-			handler.log(level, msg);
+		if(msg instanceof Exception){
+			((Exception) msg).printStackTrace(new PrintStream(new LogOutputStream(level)));
+		}else{
+			for(Handler handler : handlers){
+				handler.log(level, msg);
+			}
 		}
 	}
 	
